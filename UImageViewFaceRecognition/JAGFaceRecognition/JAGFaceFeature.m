@@ -40,6 +40,13 @@
     return self;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@ %p> x=%.02f, y=%.02f, w=%.02f, h=%.02f", self.class, self, self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height];
+}
+
+#pragma mark - PUBLIC
+
 + (NSArray *)getFaceFeatures:(NSArray *)faceFeatures
 {
     NSMutableArray *features = NSMutableArray.new;

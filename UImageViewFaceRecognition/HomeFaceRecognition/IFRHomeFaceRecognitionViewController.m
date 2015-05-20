@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UIButton *recognizeButton;
 
-@property (strong, nonatomic) JAGFaceRecognition *imageViewFaceRecognition;
+@property (strong, nonatomic) JAGFaceRecognition *faceRecognition;
 
 @end
 
@@ -38,14 +38,14 @@
 
 #pragma mark - ACCESSORS
 
-- (JAGFaceRecognition *)imageViewFaceRecognition
+- (JAGFaceRecognition *)faceRecognition
 {
-    if(!_imageViewFaceRecognition)
+    if(!_faceRecognition)
     {
-        _imageViewFaceRecognition = JAGFaceRecognition.new;
+        _faceRecognition = JAGFaceRecognition.new;
     }
     
-    return _imageViewFaceRecognition;
+    return _faceRecognition;
 }
 
 #pragma mark - ACTIONS
@@ -60,12 +60,13 @@
 - (void)recognizeFacesWithUIImageView:(UIImageView *)imageView
 {
     //CUSTOMIZE FACE DETECTION
-    self.imageViewFaceRecognition.delegate = self;
-    self.imageViewFaceRecognition.faceBorderColor = [UIColor yellowColor];
-    self.imageViewFaceRecognition.faceBorderWidth = 3.0f;
-    self.imageViewFaceRecognition.faceRounded = YES;
+    self.faceRecognition.delegate = self;
+    self.faceRecognition.faceBackgroundColor = [UIColor clearColor];
+    self.faceRecognition.faceBorderColor = [UIColor yellowColor];
+    self.faceRecognition.faceBorderWidth = 3.0f;
+    self.faceRecognition.faceRounded = YES;
     
-    [self.imageViewFaceRecognition faceDetectorWithImageView:self.photoImageView completion:^(BOOL success, UIImageView *imageView, NSArray *faces) {
+    [self.faceRecognition faceDetectorWithImageView:self.photoImageView completion:^(BOOL success, UIImageView *imageView, NSArray *faces) {
         self.photoImageView = imageView;
     }];
 }
@@ -75,7 +76,7 @@
 
 - (void)faceRecognition:(JAGFaceRecognition *)faceRecognition face:(JAGFaceFeature *)face
 {
-    NSLog(@"AQUI");
+    NSLog(@"%@",face);
 }
 
 @end
