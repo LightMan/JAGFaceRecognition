@@ -9,7 +9,7 @@
 #import "JAGFaceRecognition.h"
 
 
-@interface JAGFaceRecognition ()
+@interface JAGFaceRecognition () <JAGFaceViewDelegate>
 
 @property (strong, nonatomic) UIImageView *imageViewDetected;
 @property (strong, nonatomic) NSArray *faces;
@@ -27,6 +27,7 @@
     self = [super init];
     if(self)
     {
+        self.faceBackgroundColor = [UIColor clearColor];
         self.faceBorderColor = [UIColor whiteColor];
         self.faceBorderWidth = 1.0f;
     }
@@ -55,16 +56,6 @@
     }
     
     return _faces;
-}
-
-#pragma mark - ACTIONS
-
-- (void)onFaceAnnotationTap:(id)sender
-{
-    if([self.delegate respondsToSelector:@selector(faceRecognition:face:)])
-    {
-        [self.delegate faceRecognition:self face:nil];
-    }
 }
 
 #pragma mark - PUBLIC
@@ -121,29 +112,35 @@
     CGAffineTransform transform = CGAffineTransformMakeScale(1, -1);
     transform = CGAffineTransformTranslate(transform, 0.0, -self.imageViewDetected.bounds.size.height);
     
-    for(CIFaceFeature *face in self.faces)
+    for(JAGFaceFeature *face in self.faces)
     {
         const CGRect faceRect = CGRectApplyAffineTransform(face.bounds, transform);
-        [self.imageViewDetected addSubview:[self getAnnotationViewWithRect:faceRect]];
+        [self.imageViewDetected addSubview:[self getAnnotationViewWithRect:faceRect faceFeature:face]];
     }
 }
 
-- (UIView *)getAnnotationViewWithRect:(CGRect)rect
+- (JAGFaceView *)getAnnotationViewWithRect:(CGRect)rect faceFeature:(JAGFaceFeature *)faceFeature
 {
-    UIView *annotationView = [[UIView alloc] initWithFrame:rect];
-    annotationView.userInteractionEnabled = YES;
-    annotationView.backgroundColor = [UIColor clearColor];
-    annotationView.layer.borderWidth = self.faceBorderWidth;
-    annotationView.layer.borderColor = self.faceBorderColor.CGColor;
-    if(self.faceRounded)
+    JAGFaceView *faceView = [[JAGFaceView alloc] initWithFrame:rect];
+    faceView.delegate = self;
+    faceView.faceFeature = faceFeature;
+    faceView.faceBackgroundColor = self.faceBackgroundColor;
+    faceView.faceBorderColor = self.faceBorderColor;
+    faceView.faceBorderWidth = self.faceBorderWidth;
+    faceView.faceRounded = self.faceRounded;
+    
+    return faceView;
+}
+
+#pragma mark - PROTOCOLS & DELEGATES
+#pragma mark - JAGFaceView Delegate
+
+- (void)didInteractWithFaceFeature:(JAGFaceFeature *)face
+{
+    if([self.delegate respondsToSelector:@selector(faceRecognition:face:)])
     {
-        annotationView.layer.cornerRadius = annotationView.frame.size.height / 2;
+        [self.delegate faceRecognition:self face:face];
     }
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onFaceAnnotationTap:)];
-    [annotationView addGestureRecognizer:tapGesture];
-    
-    return annotationView;
 }
 
 @end

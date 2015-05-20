@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "JAGFaceFeature.h"
+#import "JAGFaceView.h"
+
 
 @protocol JAGFaceRecognitionDelegate;
 
@@ -18,6 +20,7 @@ typedef void (^JAGFaceRecognitionCompletion)(BOOL success, UIImageView *imageVie
 @interface JAGFaceRecognition : NSObject
 
 @property (nonatomic, weak) id <JAGFaceRecognitionDelegate> delegate;
+@property (strong, nonatomic) UIColor *faceBackgroundColor;
 @property (strong, nonatomic) UIColor *faceBorderColor;
 @property (assign, nonatomic) CGFloat faceBorderWidth;
 @property (assign, nonatomic) BOOL faceRounded;

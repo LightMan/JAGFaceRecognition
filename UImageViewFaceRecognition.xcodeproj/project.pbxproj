@@ -19,6 +19,8 @@
 		EA2474991B0CB5E000E26C85 /* JAGFaceRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2474971B0CB5E000E26C85 /* JAGFaceRecognition.m */; };
 		EA24749C1B0CBAB800E26C85 /* JAGFaceFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24749B1B0CBAB800E26C85 /* JAGFaceFeature.m */; };
 		EA24749D1B0CBAB800E26C85 /* JAGFaceFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24749B1B0CBAB800E26C85 /* JAGFaceFeature.m */; };
+		EA2474A01B0CC62700E26C85 /* JAGFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24749F1B0CC62700E26C85 /* JAGFaceView.m */; };
+		EA2474A11B0CC62700E26C85 /* JAGFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24749F1B0CC62700E26C85 /* JAGFaceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		EA2474971B0CB5E000E26C85 /* JAGFaceRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAGFaceRecognition.m; sourceTree = "<group>"; };
 		EA24749A1B0CBAB800E26C85 /* JAGFaceFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAGFaceFeature.h; sourceTree = "<group>"; };
 		EA24749B1B0CBAB800E26C85 /* JAGFaceFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAGFaceFeature.m; sourceTree = "<group>"; };
+		EA24749E1B0CC62700E26C85 /* JAGFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAGFaceView.h; sourceTree = "<group>"; };
+		EA24749F1B0CC62700E26C85 /* JAGFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAGFaceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				EA2474971B0CB5E000E26C85 /* JAGFaceRecognition.m */,
 				EA24749A1B0CBAB800E26C85 /* JAGFaceFeature.h */,
 				EA24749B1B0CBAB800E26C85 /* JAGFaceFeature.m */,
+				EA24749E1B0CC62700E26C85 /* JAGFaceView.h */,
+				EA24749F1B0CC62700E26C85 /* JAGFaceView.m */,
 			);
 			path = JAGFaceRecognition;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2474A01B0CC62700E26C85 /* JAGFaceView.m in Sources */,
 				EA2474661B0C856600E26C85 /* IFRAppDelegate.m in Sources */,
 				EA2474981B0CB5E000E26C85 /* JAGFaceRecognition.m in Sources */,
 				EA2474631B0C856600E26C85 /* main.m in Sources */,
@@ -262,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA24749D1B0CBAB800E26C85 /* JAGFaceFeature.m in Sources */,
+				EA2474A11B0CC62700E26C85 /* JAGFaceView.m in Sources */,
 				EA24748A1B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m in Sources */,
 				EA24747D1B0C856600E26C85 /* UImageViewFaceRecognitionTests.m in Sources */,
 				EA2474991B0CB5E000E26C85 /* JAGFaceRecognition.m in Sources */,
