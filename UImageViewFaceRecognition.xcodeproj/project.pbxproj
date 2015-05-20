@@ -15,6 +15,8 @@
 		EA24747D1B0C856600E26C85 /* UImageViewFaceRecognitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24747C1B0C856600E26C85 /* UImageViewFaceRecognitionTests.m */; };
 		EA2474891B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2474881B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m */; };
 		EA24748A1B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2474881B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m */; };
+		EA24748E1B0C956000E26C85 /* UIImageView+FaceRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24748D1B0C956000E26C85 /* UIImageView+FaceRecognition.m */; };
+		EA24748F1B0C956000E26C85 /* UIImageView+FaceRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = EA24748D1B0C956000E26C85 /* UIImageView+FaceRecognition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		EA24747C1B0C856600E26C85 /* UImageViewFaceRecognitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UImageViewFaceRecognitionTests.m; sourceTree = "<group>"; };
 		EA2474871B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFRHomeFaceRecognitionViewController.h; sourceTree = "<group>"; };
 		EA2474881B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFRHomeFaceRecognitionViewController.m; sourceTree = "<group>"; };
+		EA24748C1B0C956000E26C85 /* UIImageView+FaceRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FaceRecognition.h"; sourceTree = "<group>"; };
+		EA24748D1B0C956000E26C85 /* UIImageView+FaceRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FaceRecognition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 		EA24748B1B0C91A100E26C85 /* UIImageView+FaceRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				EA24748C1B0C956000E26C85 /* UIImageView+FaceRecognition.h */,
+				EA24748D1B0C956000E26C85 /* UIImageView+FaceRecognition.m */,
 			);
 			path = "UIImageView+FaceRecognition";
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				EA2474661B0C856600E26C85 /* IFRAppDelegate.m in Sources */,
 				EA2474631B0C856600E26C85 /* main.m in Sources */,
 				EA2474891B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m in Sources */,
+				EA24748E1B0C956000E26C85 /* UIImageView+FaceRecognition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA24748F1B0C956000E26C85 /* UIImageView+FaceRecognition.m in Sources */,
 				EA24748A1B0C889C00E26C85 /* IFRHomeFaceRecognitionViewController.m in Sources */,
 				EA24747D1B0C856600E26C85 /* UImageViewFaceRecognitionTests.m in Sources */,
 			);
