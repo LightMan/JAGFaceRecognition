@@ -5,10 +5,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Face Recognition View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IFRHomeFaceRecognitionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,18 +32,37 @@
                                     <constraint firstAttribute="width" secondItem="uN5-0D-Zfm" secondAttribute="height" multiplier="1:1" id="uBH-NZ-VEh"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUu-sy-AYE">
+                                <rect key="frame" x="16" y="518" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cQY-zJ-KxB"/>
+                                </constraints>
+                                <state key="normal" title="Recognize">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRecognizeButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48O-Gs-H5p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uN5-0D-Zfm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="35Q-Rn-6RJ"/>
                             <constraint firstAttribute="trailing" secondItem="uN5-0D-Zfm" secondAttribute="trailing" constant="16" id="5Ds-JE-rp3"/>
+                            <constraint firstItem="CUu-sy-AYE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="AoT-uJ-KFF"/>
                             <constraint firstAttribute="trailing" secondItem="qtt-6W-meE" secondAttribute="trailing" constant="16" id="DV3-S6-BBM"/>
                             <constraint firstItem="qtt-6W-meE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="G6Y-6h-tkF"/>
+                            <constraint firstAttribute="trailing" secondItem="CUu-sy-AYE" secondAttribute="trailing" constant="16" id="MA4-Hs-mvB"/>
                             <constraint firstItem="uN5-0D-Zfm" firstAttribute="top" secondItem="qtt-6W-meE" secondAttribute="bottom" constant="8" id="T5a-As-Atx"/>
                             <constraint firstItem="qtt-6W-meE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Too-Kn-oPF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUu-sy-AYE" secondAttribute="bottom" constant="20" id="e0m-PO-G3V"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="uN5-0D-Zfm" id="SvF-CF-9E4"/>
+                        <outlet property="recognizeButton" destination="CUu-sy-AYE" id="5nn-RN-2tv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
