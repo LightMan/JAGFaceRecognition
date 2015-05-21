@@ -68,6 +68,7 @@
         return;
     }
     
+    [self removeFacesWithImageView:imageView];
     self.imageViewDetected = imageView;
     self.imageViewDetected.userInteractionEnabled = YES;
     self.beginImage = [CIImage imageWithCGImage:[self resizeImage:imageView.image].CGImage];
@@ -78,6 +79,19 @@
 }
 
 #pragma mark - PRIVATE
+#pragma mark - Remove Faces
+
+- (void)removeFacesWithImageView:(UIImageView *)imageView
+{
+    for(UIView *view in imageView.subviews)
+    {
+        if([view isKindOfClass:[JAGFaceView class]])
+        {
+            [view removeFromSuperview];
+        }
+    }
+}
+
 #pragma mark - Image resize
 
 -(UIImage *)resizeImage:(UIImage *)img

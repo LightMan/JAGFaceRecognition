@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIImage Face Recognition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtt-6W-meE">
-                                <rect key="frame" x="16" y="20" width="288" height="29"/>
+                                <rect key="frame" x="16" y="37" width="288" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="Zwx-6g-rkK"/>
                                 </constraints>
@@ -26,12 +26,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_example" translatesAutoresizingMaskIntoConstraints="NO" id="uN5-0D-Zfm">
-                                <rect key="frame" x="16" y="57" width="288" height="288"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uN5-0D-Zfm" secondAttribute="height" multiplier="1:1" id="uBH-NZ-VEh"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUu-sy-AYE">
                                 <rect key="frame" x="16" y="518" width="288" height="30"/>
                                 <constraints>
@@ -44,6 +38,12 @@
                                     <action selector="onRecognizeButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48O-Gs-H5p"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_example" translatesAutoresizingMaskIntoConstraints="NO" id="uN5-0D-Zfm">
+                                <rect key="frame" x="16" y="89" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uN5-0D-Zfm" secondAttribute="height" multiplier="1:1" id="uBH-NZ-VEh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -53,8 +53,8 @@
                             <constraint firstAttribute="trailing" secondItem="qtt-6W-meE" secondAttribute="trailing" constant="16" id="DV3-S6-BBM"/>
                             <constraint firstItem="qtt-6W-meE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="G6Y-6h-tkF"/>
                             <constraint firstAttribute="trailing" secondItem="CUu-sy-AYE" secondAttribute="trailing" constant="16" id="MA4-Hs-mvB"/>
-                            <constraint firstItem="uN5-0D-Zfm" firstAttribute="top" secondItem="qtt-6W-meE" secondAttribute="bottom" constant="8" id="T5a-As-Atx"/>
-                            <constraint firstItem="qtt-6W-meE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Too-Kn-oPF"/>
+                            <constraint firstItem="uN5-0D-Zfm" firstAttribute="top" secondItem="qtt-6W-meE" secondAttribute="bottom" constant="23" id="T5a-As-Atx"/>
+                            <constraint firstItem="qtt-6W-meE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="Too-Kn-oPF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUu-sy-AYE" secondAttribute="bottom" constant="20" id="e0m-PO-G3V"/>
                         </constraints>
                     </view>
