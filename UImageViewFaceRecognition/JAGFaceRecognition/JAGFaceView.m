@@ -46,7 +46,7 @@
 - (void)setFaceRounded:(BOOL)faceRounded
 {
     _faceRounded = faceRounded;
-    self.layer.cornerRadius = self.frame.size.height / 2;
+    self.layer.cornerRadius = faceRounded? self.frame.size.height / 2 : 0.f;
 }
 
 #pragma mark - ACTIONS
